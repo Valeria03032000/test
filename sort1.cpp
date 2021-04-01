@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void SheikerSort(int arr[], int arr_size)
+void SheikerSort(int* arr, int arr_size)
 {
         
   int left, right, i, k, temp;
@@ -31,16 +31,20 @@ void SheikerSort(int arr[], int arr_size)
  
 int main()
 {
-int i, arr_size, arr[arr_size];
+    int* arr;
+int arr_size=0;
    cout << "Введите размерность массива" << ' ';
 cin >> arr_size;
+
+ arr = new int[arr_size];  
+ 
 cout << "Введите элементы массива" << ' ';
 
-for(i = 0; i < arr_size; i++)
+for(int i = 0; i < arr_size; i++)
  cin >> arr[i];
 
 SheikerSort(arr, arr_size);
-for (i = 0; i < arr_size; i++){
+for (int i = 0; i < arr_size; i++){
     std::cout << arr[i] << " " ;   
 }
  return 0;
